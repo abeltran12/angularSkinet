@@ -1,0 +1,47 @@
+@angularSkinet_ApiHost_Address = https://localhost:5001
+
+GET {{angularSkinet_ApiHost_Address}}/api/products
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/products/1
+Accept: application/json
+
+###
+
+POST  {{angularSkinet_ApiHost_Address}}/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "prueba",
+    "description": "description",
+    "price": 100.50,
+    "pictureUrl": "ejemplo",
+    "type": "Shoe",
+    "brand": "Angular",
+    "quantityInStock": 100
+}
+
+###
+
+PUT {{angularSkinet_ApiHost_Address}}/api/products/2
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 2,
+    "name": "pruebaxxxxxx",
+    "description": "descriptionxxxxx",
+    "price": 200.50,
+    "pictureUrl": "ejemploxxxxx",
+    "type": "Shoexxxxx",
+    "brand": "Angularxxxxxx",
+    "quantityInStock": 1000
+}
+
+###
+
+DELETE  {{angularSkinet_ApiHost_Address}}/api/products/1
+Accept: application/json
