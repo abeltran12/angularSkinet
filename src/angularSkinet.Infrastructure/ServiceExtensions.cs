@@ -1,4 +1,4 @@
-using System;
+using angularSkinet.Core.Interfaces;
 using angularSkinet.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,5 +14,7 @@ public static class ServiceExtensions
         {
             options.UseSqlServer(configuration.GetConnectionString("Default"));
         });
+
+        services.AddScoped<IProductRepository, ProductRepository>();
     }
 }

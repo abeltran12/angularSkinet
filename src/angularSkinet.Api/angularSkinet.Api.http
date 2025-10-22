@@ -1,11 +1,21 @@
 @angularSkinet_ApiHost_Address = https://localhost:5001
 
-GET {{angularSkinet_ApiHost_Address}}/api/products
+GET {{angularSkinet_ApiHost_Address}}/api/products?sort=priceAsc
 Accept: application/json
 
 ###
 
-GET {{angularSkinet_ApiHost_Address}}/api/products/1
+GET {{angularSkinet_ApiHost_Address}}/api/products/brands
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/products/types
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/products/2
 Accept: application/json
 
 ###
@@ -26,12 +36,12 @@ Accept: application/json
 
 ###
 
-PUT {{angularSkinet_ApiHost_Address}}/api/products/2
+PUT {{angularSkinet_ApiHost_Address}}/api/products/3
 Content-Type: application/json
 Accept: application/json
 
 {
-    "id": 2,
+    "id": 3,
     "name": "pruebaxxxxxx",
     "description": "descriptionxxxxx",
     "price": 200.50,
@@ -43,5 +53,5 @@ Accept: application/json
 
 ###
 
-DELETE  {{angularSkinet_ApiHost_Address}}/api/products/1
+DELETE  {{angularSkinet_ApiHost_Address}}/api/products/2
 Accept: application/json
