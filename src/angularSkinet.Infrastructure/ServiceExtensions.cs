@@ -16,5 +16,6 @@ public static class ServiceExtensions
         });
 
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
     }
 }

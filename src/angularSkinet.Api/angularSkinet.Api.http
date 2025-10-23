@@ -15,7 +15,7 @@ Accept: application/json
 
 ###
 
-GET {{angularSkinet_ApiHost_Address}}/api/products/2
+GET {{angularSkinet_ApiHost_Address}}/api/products/19
 Accept: application/json
 
 ###
@@ -36,12 +36,12 @@ Accept: application/json
 
 ###
 
-PUT {{angularSkinet_ApiHost_Address}}/api/products/3
+PUT {{angularSkinet_ApiHost_Address}}/api/products/19
 Content-Type: application/json
 Accept: application/json
 
 {
-    "id": 3,
+    "id": 19,
     "name": "pruebaxxxxxx",
     "description": "descriptionxxxxx",
     "price": 200.50,
@@ -53,5 +53,5 @@ Accept: application/json
 
 ###
 
-DELETE  {{angularSkinet_ApiHost_Address}}/api/products/2
+DELETE  {{angularSkinet_ApiHost_Address}}/api/products/19
 Accept: application/json
