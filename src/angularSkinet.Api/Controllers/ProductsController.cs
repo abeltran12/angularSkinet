@@ -1,6 +1,8 @@
+using angularSkinet.Api.RequestHelpers;
 using angularSkinet.Core.Entities;
 using angularSkinet.Core.Interfaces;
 using angularSkinet.Core.Specifications;
+using Core.Specifications;
 using Microsoft.AspNetCore.Mvc;
 
 namespace angularSkinet.Api.Controllers;
@@ -13,11 +15,17 @@ public class ProductsController(IGenericRepository<Product> repository) : Contro
 
     [HttpGet]
     public async Task<ActionResult<IReadOnlyList<Product>>> 
-        GetProducts(string? brand, string? type, string? sort)
+        GetProducts([FromQuery] ProductSpecParams specParams)
     {
-        var spec = new ProductSpecification(brand, type, sort);
+        var spec = new ProductSpecification(specParams);
+
         var products = await _repository.GetAllAsync(spec);
-        return Ok(products);
+        var count = await _repository.CountAsync(spec);
+
+        var pagination = new Pagination<Product>(
+            specParams.PageIndex, specParams.PageSize, count, products);
+
+        return Ok(pagination);
     }
 
     [HttpGet("brands")]

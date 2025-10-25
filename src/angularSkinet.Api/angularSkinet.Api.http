@@ -1,6 +1,6 @@
 @angularSkinet_ApiHost_Address = https://localhost:5001
 
-GET {{angularSkinet_ApiHost_Address}}/api/products?sort=priceAsc
+GET {{angularSkinet_ApiHost_Address}}/api/products?search=purp
 Accept: application/json
 
 ###
