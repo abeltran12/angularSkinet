@@ -4,15 +4,23 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddProblemDetails();
 builder.Services.AddControllers();
+builder.Services.AddCors();
 
 builder.Services.AddInfrastructureExtensions(builder.Configuration);
 
 var app = builder.Build();
+app.UseExceptionHandler();
+
+app.UseCors(x =>
+    x.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("http://localhots:4200", "https://localhots:4200"));
 
 if (app.Environment.IsDevelopment())
 {
-    
+
 }
 
 app.UseHttpsRedirection();

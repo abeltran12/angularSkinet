@@ -55,3 +55,35 @@ Accept: application/json
 
 DELETE  {{angularSkinet_ApiHost_Address}}/api/products/19
 Accept: application/json
+
+
+
+### errores
+
+GET {{angularSkinet_ApiHost_Address}}/api/buggy/unauthorized
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/buggy/badrequest
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/buggy/notfound
+Accept: application/json
+
+###
+
+GET {{angularSkinet_ApiHost_Address}}/api/buggy/internalerror
+Accept: application/json
+
+###
+
+POST  {{angularSkinet_ApiHost_Address}}/api/buggy/validationerror
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
